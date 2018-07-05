@@ -83,16 +83,30 @@ function isless(x::Optional, y::Optional)
     return isless(_unwrap(x), _unwrap(y))
 end
 
-function isless(x::Optional, y::Optional)
-    ismissing(x) && return missing
+function isless(x, y::Optional)
     ismissing(y) && return missing
-    return isless(_unwrap(x), _unwrap(y))
+    return isless(x, _unwrap(y))
+end
+
+function isless(x::Optional, y)
+    ismissing(x) && return missing
+    return isless(_unwrap(x), y)
 end
 
 function ==(x::Optional, y::Optional)
     ismissing(x) && return missing
     ismissing(y) && return missing
     return _unwrap(x) == _unwrap(y)
+end
+
+function ==(x, y::Optional)
+    ismissing(y) && return missing
+    return x == _unwrap(y)
+end
+
+function ==(x::Optional, y)
+    ismissing(x) && return missing
+    return _unwrap(x) == y
 end
 
 end # module
