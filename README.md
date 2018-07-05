@@ -1,5 +1,12 @@
 # Optionals
 
+[![Build Status](https://travis-ci.org/simonfxr/Optionals.jl.svg?branch=master)](https://travis-ci.org/simonfxr/Optionals.jl)
+
+[![Coverage Status](https://coveralls.io/repos/simonfxr/Optionals.jl/badge.svg?branch=master&service=github)](https://coveralls.io/github/simonfxr/Optionals.jl?branch=master)
+
+[![codecov.io](http://codecov.io/github/simonfxr/Optionals.jl/coverage.svg?branch=master)](http://codecov.io/github/simonfxr/Optionals.jl?branch=master)
+
+
 This Package provides the `Optional{T}` type, this type is a simple wrapper
 around `Union{T, Missing}` at least semantically.
 
